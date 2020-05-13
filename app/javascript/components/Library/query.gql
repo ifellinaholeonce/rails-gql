@@ -1,0 +1,12 @@
+const LibraryQuery = gql`
+  {
+    items {
+      id
+      title
+      user {
+        email
+      }
+    }
+  }
+`;
+
