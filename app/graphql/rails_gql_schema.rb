@@ -2,6 +2,9 @@ class RailsGqlSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
+  # Graph Batch to prevent N+1
+  use GraphQL::Batch
+
   # Opt in to the new runtime (default in future graphql-ruby versions)
   use GraphQL::Execution::Interpreter
   use GraphQL::Analysis::AST
