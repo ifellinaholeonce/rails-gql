@@ -13,7 +13,7 @@ module Mutations
     end
 
     subject(:result) do
-      post '/graphql', params: { query: query(user: user.email) }
+	RailsGqlSchema.execute(mutation).as_json
     end	
 
     context "user authenticates" do
